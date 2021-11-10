@@ -13,12 +13,6 @@ services:
         - './config.yml:/etc/docker/registry/config.yml'
         - '/etc/letsencrypt:/certs'
 
-  nginx-fpm-alpine:
-    image: privatebin/nginx-fpm-alpine
-    restart: always
-    volumes:
-        - '$PWD/privatebin-data:/srv/data'
-
   sslproxy:
     image: nginx
     restart: always
